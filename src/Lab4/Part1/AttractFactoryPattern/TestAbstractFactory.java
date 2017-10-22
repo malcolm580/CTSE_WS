@@ -10,9 +10,9 @@ public class TestAbstractFactory {
 			AbstractFactory af = 
 					(AbstractFactory)Class.forName(factories[choice]).newInstance();
 
-			System.out.println("Product A Created : " 
+			System.out.println("FoodItem A Created : "
 							+ c.createA(af).getName());
-			System.out.println("Product B Created : " 
+			System.out.println("FoodItem B Created : "
 							+ c.createB(af).getName());
 		}
 		catch (Exception e) {
