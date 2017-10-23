@@ -8,13 +8,11 @@ public abstract class CreateCommand implements Command{
 
     public void run(){
         p = factoryMethod();
-        System.out.println(p.getName()+" Created");
     }
 
     @Override
     public void undo() {
-        int lastProdtctIndex = productVector.size()-1;
-        productVector.remove(productVector.indexOf(productVector.size()));
+
     }
 
     public FoodItem getP() {
