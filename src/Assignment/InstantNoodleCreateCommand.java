@@ -6,9 +6,6 @@ import java.io.InputStreamReader;
 
 public class InstantNoodleCreateCommand extends CreateCommand {
 
-    private InputStreamReader is = new InputStreamReader(System.in);
-    private BufferedReader br = new BufferedReader(is);
-    private String line;
 
     @Override
     public FoodItem factoryMethod( ) {
@@ -50,9 +47,7 @@ public class InstantNoodleCreateCommand extends CreateCommand {
         }
         int weight = Integer.parseInt(line);
 
-
-        FoodItem s = new IstantNoodle(name, id , balance , weight);
         System.out.println("New IstantNoodle: id("+id+"),name("+name+"),balance("+balance+"),weight:("+weight+")");
-        return s;
+        return new IstantNoodle(name, id , balance , weight);
     }
 }

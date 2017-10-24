@@ -2,9 +2,9 @@ package Assignment;
 
 public interface Command {
 
-    public void run();
+    public void run(AppData data);
 
 
-    public void undo();
+    public void undo(AppData data);
 
 }
