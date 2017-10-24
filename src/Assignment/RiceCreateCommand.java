@@ -47,7 +47,7 @@ public class RiceCreateCommand extends CreateCommand {
         }
         String type = line;
 
-        System.out.println("New IstantNoodle: id("+id+"),name("+name+"),balance("+balance+"),type:("+type+")");
+        System.out.println("New InstantNoodle: id("+id+"),name("+name+"),balance("+balance+"),type:("+type+")");
 
         return new Rice(name, id,balance,type);
     }

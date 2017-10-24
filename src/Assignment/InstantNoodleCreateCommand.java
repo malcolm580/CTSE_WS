@@ -1,8 +1,6 @@
 package Assignment;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class InstantNoodleCreateCommand extends CreateCommand {
 
@@ -47,7 +45,7 @@ public class InstantNoodleCreateCommand extends CreateCommand {
         }
         int weight = Integer.parseInt(line);
 
-        System.out.println("New IstantNoodle: id("+id+"),name("+name+"),balance("+balance+"),weight:("+weight+")");
-        return new IstantNoodle(name, id , balance , weight);
+        System.out.println("New InstantNoodle: id("+id+"),name("+name+"),balance("+balance+"),weight:("+weight+")");
+        return new InstantNoodle(name, id , balance , weight);
     }
 }

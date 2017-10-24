@@ -1,10 +1,10 @@
 package Assignment;
 
-public class IstantNoodle extends FoodItem {
+public class InstantNoodle extends FoodItem {
 
-    private int weight;
+    protected int weight;
 
-    public IstantNoodle(String name, int itemID, int balance, int weight) {
+    public InstantNoodle(String name, int itemID, int balance, int weight) {
         super(name, itemID, balance);
         this.weight = weight;
     }

@@ -2,7 +2,7 @@ package Assignment;
 
 public class Rice extends FoodItem {
 
-    private String type;
+    protected String type;
 
     public Rice(String name, int itemID, int balance, String type) {
         super(name, itemID, balance);
