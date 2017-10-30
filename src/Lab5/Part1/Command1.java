@@ -10,11 +10,11 @@ public class Command1 implements Command {
 
     @Override
     public void execute() {
-        System.out.println(id+ "Part1.Command1:execute()");
+        System.out.println(id+ "Part1.NewLab5.Part1.Command1:execute()");
     }
 
     @Override
     public void undo() {
-        System.out.println(id+ "Part1.Command1:undo()");
+        System.out.println(id+ "Part1.NewLab5.Part1.Command1:undo()");
     }
 }

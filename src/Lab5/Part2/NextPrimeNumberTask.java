@@ -22,7 +22,7 @@ public class NextPrimeNumberTask implements Task {
                 nextPrimeNumber++;
                 break;
             }
-
+            nextPrimeNumber++;
         }
     }
 }

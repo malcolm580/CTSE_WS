@@ -8,7 +8,7 @@ public class TaskMinder extends Thread {
 	//private long timeLastDone1, timeLastDone2;
 	//private int nextNumber, nextPrimeNumber;
 	private long now;
-	// create a vector to store TaskEntry
+	// create a vector to store NewLab5.Part2.TaskEntry
 	private Vector TaskEntryVector;
 
 	public TaskMinder(long sleepInterval) {
@@ -24,10 +24,10 @@ public class TaskMinder extends Thread {
 
 				for(int i =0 ; i<TaskEntryVector.size() ; i++){
 					TaskEntry te = (TaskEntry) TaskEntryVector.elementAt(i);
-					long repeatInterval = te.getRepeatInterval();
-					long timeLastDone = te.getTimeLastDone();
-					Task task = te.getTask();
-					task.performTask();
+					if(te.getTimeLastDone() + te.getRepeatInterval() <= now) {
+						te.getTask().performTask();
+						te.setTimeLastDone(now);
+					}
 				}
 			}
 			catch (Exception e) {
