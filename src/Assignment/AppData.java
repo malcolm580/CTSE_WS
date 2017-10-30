@@ -1,5 +1,6 @@
 package Assignment;
 
+import java.util.HashMap;
 import java.util.Stack;
 import java.util.Vector;
 
@@ -8,11 +9,18 @@ public class AppData {
     private Stack undoStack;
     private Stack redoStack;
     private Vector foodItems;
+    private HashMap commandMap;
+
+    public String  CreateCommandMessage = "Enter food type (ri=rice / in=instance noodle)";
 
     public AppData() {
         this.undoStack = new Stack();
         this.redoStack = new Stack();
         this.foodItems = new Vector();
+        this.commandMap = new HashMap();
+        commandMap.put("c","Command");
+        commandMap.put("ri","RiceCreateCommand");
+        commandMap.put("in","InstantNoodleCreateCommand");
     }
 
     public Stack getUndoStack() {
@@ -26,6 +34,10 @@ public class AppData {
 
     public Vector getFoodItems() {
         return foodItems;
+    }
+
+    public HashMap getCommandMap() {
+        return commandMap;
     }
 
     public void addUndo(Command undo){
