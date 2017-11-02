@@ -17,6 +17,7 @@ public class Customer {
         Accounts = new Vector();
         this.name = name;
         this.address = address;
+        System.out.println("Customer: " + this.name + "is created.");
     }
 
     // Methods for vector
@@ -28,9 +29,17 @@ public class Customer {
     }
     public void addAccount(Account b) {
         Accounts.add(b);
+        System.out.println("--- add account : " + b.accountNumber);
     }
 
-
+    @Override
+    public String toString() {
+        String message = "\"SuperBank Customer :\" + this.name + \" at address: \" +this.address";
+        for ( Account acct : Accounts) {
+            message += "\n" + acct ;
+        }
+        return message ;
+    }
 }
 
 

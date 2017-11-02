@@ -10,8 +10,13 @@ public class Caretaker {
         undoList = new Vector<>();
     }
 
-    public void saveMyAccount(Account acct){
+    public void saveAccount(Account acct){
         Memento add = new AccountMemento(acct);
+        undoList.addElement(add);
+    }
+
+    public void saveCustomer (Customer cust){
+        Memento add = new CustomerMemento(cust);
         undoList.addElement(add);
     }
 
