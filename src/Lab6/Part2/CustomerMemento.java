@@ -14,9 +14,7 @@ public class CustomerMemento implements Memento{
         memName = cust.name;
         memAddress = cust.address;
         memAccounts = new Vector<Account>();
-        for (int i = 0 ; i < cust.Accounts.size() ; i ++){
-            memAccounts.add(cust.Accounts.get(i));
-        }
+        memAccounts.addAll(cust.Accounts);
     }
 
     @Override
