@@ -40,9 +40,10 @@ public class Main2 {
 						factory.setShapes(shapes);
 						c = factory.create();
 						c.execute();
-						if(factory instanceof DeleteCommandFactory || factory instanceof CreateCircleFactory || factory instanceof CreateRectangleFactory ){
-							history.push(c);
+						if(option == 2 ){
+							break;
 						}
+						history.push(c);
 						System.out.println(history.size());
 						break;
 					default:
