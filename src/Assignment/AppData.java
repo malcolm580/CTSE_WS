@@ -54,4 +54,15 @@ public class AppData {
         this.foodItems.remove(food);
     }
 
+    public FoodItem findFood(int id){
+        FoodItem target = null;
+        for (FoodItem foodItem : foodItems) {
+            int targetID = foodItem.getItemID();
+            if (id == targetID) {
+                target = foodItem;
+            }
+        }
+        return target;
+    }
+
 }

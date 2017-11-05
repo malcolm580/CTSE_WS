@@ -16,6 +16,16 @@ public class Rice extends FoodItem {
 
     @Override
     public String toString() {
-        return "Rice created: ( ItemId: " +itemID+ " Name: " + name + " Balance: " + balance +" Type: " +type + ")";
+        return  itemID+ "\t" + name + "\t" + balance +"\t" +type ;
     }
+
+    @Override
+    public void showInfo() {
+        System.out.println("ID: " + itemID);
+        System.out.println("Name: " + name);
+        System.out.println("Quantity: " + balance);
+        System.out.println("Type: " + type);
+    }
+
+
 }

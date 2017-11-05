@@ -20,6 +20,13 @@ public class RiceCreateCommand extends CreateCommand {
         }
         String[] inputSpilt = line.split(",");
 
+        try{
+            int id = Integer.parseInt(inputSpilt[0]);
+        }catch (NumberFormatException ex){
+            System.out.print("Please input Integer as ItemID");
+        }
+
+
         return new Rice(inputSpilt);
     }
 }

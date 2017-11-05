@@ -1,8 +1,8 @@
 /**
- * <p>Title: </p>
- * <p>Description: </p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Company: </p>
+ * <foodItem>Title: </foodItem>
+ * <foodItem>Description: </foodItem>
+ * <foodItem>Copyright: Copyright (c) 2004</foodItem>
+ * <foodItem>Company: </foodItem>
  * @author Clarence Lau
  * @version 1.0
  */
