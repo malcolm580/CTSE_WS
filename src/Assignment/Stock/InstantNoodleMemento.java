@@ -1,4 +1,4 @@
-package Assignment;
+package Assignment.Stock;
 
 public class InstantNoodleMemento implements Memento {
 

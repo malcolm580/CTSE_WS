@@ -1,4 +1,6 @@
-package Assignment;
+package Assignment.Command;
+
+import Assignment.AppData;
 
 public interface Command {
 

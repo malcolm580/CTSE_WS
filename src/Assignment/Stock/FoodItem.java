@@ -1,4 +1,4 @@
-package Assignment;
+package Assignment.Stock;
 
 public abstract class FoodItem {
 
@@ -6,10 +6,14 @@ public abstract class FoodItem {
     protected int itemID;
     protected int balance;
 
-    public FoodItem(String name, int itemID, int balance) {
+    public FoodItem( int itemID , String name ) {
         this.name = name;
-        this.itemID = itemID;
-        this.balance = balance;
+        try {
+            this.itemID = itemID;
+        }catch (NumberFormatException ex){
+            System.out.print("Please enter int for ItemID");
+        }
+        this.balance = 0;
     }
 
     public String getName() {
