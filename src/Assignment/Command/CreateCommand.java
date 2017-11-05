@@ -12,6 +12,8 @@ public abstract class CreateCommand implements Command{
     protected BufferedReader br = new BufferedReader(is);
     protected String line;
     protected FoodItem foodItem;
+    protected String[] inputSpilt;
+
 
     public void run(AppData data){
         foodItem = factoryMethod();
@@ -34,10 +36,9 @@ public abstract class CreateCommand implements Command{
         data.addFood(foodItem);
     }
 
-
     @Override
     public String toString() {
-        return foodItem.toString();
+        return "Create "+inputSpilt[0]+" "+ inputSpilt[1];
     }
 
 }

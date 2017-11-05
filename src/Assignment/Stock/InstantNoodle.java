@@ -28,4 +28,9 @@ public class InstantNoodle extends FoodItem {
         System.out.println("Quantity: " + balance);
         System.out.println("Weight: " + weight);
     }
+
+    @Override
+    public String mementoName() {
+        return "InstantNoodleMemento";
+    }
 }

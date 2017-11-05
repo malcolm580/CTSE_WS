@@ -10,10 +10,8 @@ public class UndoCommand implements Command {
     public void run(AppData data) {
         try{
             Command command = (Command) data.removeUndo();
-            if (command instanceof CreateCommand){
-                command.undo(data);
-                data.addRedo(command);
-            }
+            command.undo(data);
+            data.addRedo(command);
         }catch (EmptyStackException ex){
             System.out.println("No more undo stack");
         }

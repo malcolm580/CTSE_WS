@@ -15,9 +15,9 @@ public class InstantNoodleCreateCommand extends CreateCommand {
         try {
             line = br.readLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.print("Please input correct format");
         }
-        String[] inputSpilt = line.split(",");
+        inputSpilt = line.split(",");
 
         try{
             int id = Integer.parseInt(inputSpilt[0]);
@@ -28,6 +28,7 @@ public class InstantNoodleCreateCommand extends CreateCommand {
 
         return new InstantNoodle(inputSpilt);
     }
+
 
 
 }

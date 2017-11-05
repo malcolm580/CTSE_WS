@@ -9,10 +9,9 @@ public class RedoCommand implements Command {
     public void run(AppData data) {
         try{
             Command command = (Command) data.removeRedo();
-            if (command instanceof CreateCommand){
-                command.redo(data);
-                data.addUndo(command);
-            }
+            command.redo(data);
+            data.addUndo(command);
+
         }catch (EmptyStackException ex){
             System.out.println("No more redo stack");
         }

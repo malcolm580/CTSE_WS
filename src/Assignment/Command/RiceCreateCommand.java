@@ -16,16 +16,15 @@ public class RiceCreateCommand extends CreateCommand {
         try {
             line = br.readLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.print("Please input correct format");
         }
-        String[] inputSpilt = line.split(",");
+        inputSpilt = line.split(",");
 
         try{
             int id = Integer.parseInt(inputSpilt[0]);
         }catch (NumberFormatException ex){
             System.out.print("Please input Integer as ItemID");
         }
-
 
         return new Rice(inputSpilt);
     }

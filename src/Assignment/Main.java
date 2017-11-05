@@ -72,11 +72,12 @@ public class Main {
 
     }
 
-    public static HashMap initMap(HashMap FactoryMap){
+    public static void initMap(HashMap FactoryMap){
         FactoryMap.put("c","Assignment.Factory.CreateCommandFactory");
         FactoryMap.put("u","Assignment.Factory.UndoCommandFactory");
         FactoryMap.put("r","Assignment.Factory.RedoCommandFactory");
         FactoryMap.put("s","Assignment.Factory.ShowCommandFactory");
-        return FactoryMap;
+        FactoryMap.put("g","Assignment.Factory.ReceiveItemCommandFactory");
+        FactoryMap.put("d","Assignment.Factory.DistributeItemCommandFactory");
     }
 }

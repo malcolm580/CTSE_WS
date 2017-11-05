@@ -14,6 +14,14 @@ public class Rice extends FoodItem {
         return name;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return  itemID+ "\t\t" + name + "\t\t" + balance +"\t\t" +type +"\n" ;
@@ -25,6 +33,11 @@ public class Rice extends FoodItem {
         System.out.println("Name: " + name);
         System.out.println("Quantity: " + balance);
         System.out.println("Type: " + type);
+    }
+
+    @Override
+    public String mementoName() {
+        return "RiceMemento";
     }
 
 
