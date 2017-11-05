@@ -2,15 +2,20 @@ package Assignment.Command;
 
 import Assignment.AppData;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class UndoCommand implements Command {
     @Override
     public void run(AppData data) {
-        Command command = (Command) data.removeUndo();
-        if (command instanceof CreateCommand){
-            command.undo(data);
-            data.addRedo(command);
+        try{
+            Command command = (Command) data.removeUndo();
+            if (command instanceof CreateCommand){
+                command.undo(data);
+                data.addRedo(command);
+            }
+        }catch (EmptyStackException ex){
+            System.out.println("No more undo stack");
         }
     }
 

@@ -9,7 +9,6 @@ import java.util.Vector;
 
 import Assignment.Command.Command;
 import Assignment.Factory.*;
-import Assignment.Stock.FoodItem;
 
 public class Main {
 
@@ -37,7 +36,7 @@ public class Main {
             try {
                 line = br.readLine();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Please enter correct command name");
             }
             String input = line;
             String factoryTarget = (String) FactoryMap.get(input);
@@ -65,14 +64,8 @@ public class Main {
 
                     System.out.println(redo.get(i));
                 }
-            }catch (ClassNotFoundException ex){
-                System.out.print("Class not found");
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println("Class not found");
             }
 
         }

@@ -11,7 +11,7 @@ public class RiceCreateCommand extends CreateCommand {
     @Override
     public FoodItem factoryMethod() {
 
-        System.out.println("Enter id , name , type:");
+        System.out.println("Enter (integer) id , (String) name , (String) type:");
         line = null;
         try {
             line = br.readLine();

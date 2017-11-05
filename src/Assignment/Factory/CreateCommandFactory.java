@@ -26,8 +26,8 @@ public class CreateCommandFactory extends Factory {
         String foodType = (String) commandMap.get(input);
         try{
              command = (Command) Class.forName(foodType).newInstance();
-        }catch (ClassNotFoundException ex){
-            System.out.print("Class not found");
+        }catch (ClassNotFoundException | NullPointerException ex){
+            System.out.println("Command not found");
         }
         return command ;
     }

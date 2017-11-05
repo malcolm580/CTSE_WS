@@ -2,13 +2,19 @@ package Assignment.Command;
 
 import Assignment.AppData;
 
+import java.util.EmptyStackException;
+
 public class RedoCommand implements Command {
     @Override
     public void run(AppData data) {
-        Command command = (Command) data.removeRedo();
-        if (command instanceof CreateCommand){
-            command.redo(data);
-            data.addUndo(command);
+        try{
+            Command command = (Command) data.removeRedo();
+            if (command instanceof CreateCommand){
+                command.redo(data);
+                data.addUndo(command);
+            }
+        }catch (EmptyStackException ex){
+            System.out.println("No more redo stack");
         }
     }
 

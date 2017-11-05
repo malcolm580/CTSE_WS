@@ -10,7 +10,7 @@ public class InstantNoodleCreateCommand extends CreateCommand {
 
     public FoodItem factoryMethod( ) {
 
-        System.out.println("Enter id , name , weight:");
+        System.out.println("Enter (integer) id , (string) name , (integer) weight:");
         line = null;
         try {
             line = br.readLine();
