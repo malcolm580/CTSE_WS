@@ -20,10 +20,7 @@ public abstract class ShowCommand implements Command {
 
     }
 
-    @Override
-    public void redo(AppData data) {
 
-    }
 }
 
 

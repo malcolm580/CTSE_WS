@@ -17,49 +17,24 @@ public class DistributeItemCommand implements Command {
     protected FoodItem edited;
     protected int disValue;
 
+    public DistributeItemCommand(Memento memento, FoodItem edited, int disValue) {
+        this.memento = memento;
+        this.edited = edited;
+        this.disValue = disValue;
+    }
+
     @Override
     public void run(AppData data) {
-        System.out.println("Enter id code;");
-        line = null;
-        try {
-            line = br.readLine();
-        } catch (IOException e) {
-            System.out.print("Please input correct format");
-        }
-        edited = data.findFood(Integer.parseInt(line));
-        if(Objects.equals(edited.mementoName(), "RiceMemento")){
-            Rice rice = (Rice)edited;
-            edited = rice;
-            memento = new RiceMemento(rice, rice.getBalance() , rice.getType());
-        }else if(Objects.equals(edited.mementoName(), "InstantNoodleMemento")){
-            InstantNoodle instantNoodle = (InstantNoodle) edited;
-            edited = instantNoodle ;
-            memento = new InstantNoodleMemento(instantNoodle, instantNoodle.getBalance() , instantNoodle.getWeight());
-        }
-
-        System.out.println("Quantity to distribute;");
-        line = null;
-        try {
-            line = br.readLine();
-        } catch (IOException e) {
-            System.out.print("Please input correct format");
-        }
-        disValue = Integer.parseInt(line);
         edited.setBalance(edited.getBalance()-disValue);
-
-        data.addUndo(this);
     }
 
 
     @Override
     public void undo(AppData data) {
         memento.restore();
+//        data.addRedo(this);
     }
 
-    @Override
-    public void redo(AppData data) {
-
-    }
 
     public String toString() {
         return "Distribute "+disValue+" "+ edited.getItemID() + " " + edited.getName();

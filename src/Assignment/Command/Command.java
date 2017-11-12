@@ -9,6 +9,6 @@ public interface Command {
 
     public void undo(AppData data);
 
-    public void redo(AppData data);
+
 
 }

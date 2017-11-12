@@ -23,8 +23,4 @@ public class ReceiveItemCommand implements Command {
 
     }
 
-    @Override
-    public void redo(AppData data) {
-
-    }
 }

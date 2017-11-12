@@ -14,10 +14,12 @@ public abstract class CreateCommand implements Command{
     protected FoodItem foodItem;
     protected String[] inputSpilt;
 
-    public void run(AppData data){
+    public CreateCommand(){
         foodItem = factoryMethod();
+    }
+
+    public void run(AppData data){
         data.addFood(foodItem);
-        data.addUndo(this);
     }
 
     public abstract FoodItem factoryMethod( );
@@ -31,9 +33,6 @@ public abstract class CreateCommand implements Command{
         return foodItem;
     }
 
-    public void redo(AppData data){
-        data.addFood(foodItem);
-    }
 
     @Override
     public String toString() {

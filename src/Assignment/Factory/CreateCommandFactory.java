@@ -1,8 +1,10 @@
 package Assignment.Factory;
 
+import Assignment.AppData;
 import Assignment.Command.Command;
 
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.util.HashMap;
 
 public class CreateCommandFactory extends Factory {
@@ -25,10 +27,11 @@ public class CreateCommandFactory extends Factory {
         String input = line;
         String foodType = (String) commandMap.get(input);
         try{
-             command = (Command) Class.forName(foodType).newInstance();
+            command = (Command) Class.forName(foodType).newInstance();
         }catch (ClassNotFoundException | NullPointerException ex){
             System.out.println("Command not found");
         }
+        data.addUndo(command);
         return command ;
     }
 }

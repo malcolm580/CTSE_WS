@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class InstantNoodleCreateCommand extends CreateCommand {
 
+
     public FoodItem factoryMethod( ) {
 
         System.out.println("Enter (integer) id , (string) name , (integer) weight:");

@@ -9,9 +9,8 @@ public class RedoCommand implements Command {
     public void run(AppData data) {
         try{
             Command command = (Command) data.removeRedo();
-            command.redo(data);
+            command.run(data);
             data.addUndo(command);
-
         }catch (EmptyStackException ex){
             System.out.println("No more redo stack");
         }
@@ -22,8 +21,4 @@ public class RedoCommand implements Command {
 
     }
 
-    @Override
-    public void redo(AppData data) {
-
-    }
 }

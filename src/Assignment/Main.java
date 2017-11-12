@@ -42,6 +42,7 @@ public class Main {
             String factoryTarget = (String) FactoryMap.get(input);
             try{
                 factory = (Factory) Class.forName(factoryTarget).newInstance();
+                factory.setData(data);
                 command = factory.create();
                 command.run(data);
 
@@ -65,8 +66,8 @@ public class Main {
                     System.out.println(redo.get(i));
                 }
             } catch (Exception e) {
-//                System.out.println("Class not found");
-                e.printStackTrace();
+                System.out.println("Class not found");
+
             }
 
         }
