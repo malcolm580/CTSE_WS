@@ -65,7 +65,8 @@ public class Main {
                     System.out.println(redo.get(i));
                 }
             } catch (Exception e) {
-                System.out.println("Class not found");
+//                System.out.println("Class not found");
+                e.printStackTrace();
             }
 
         }

@@ -14,7 +14,6 @@ public abstract class CreateCommand implements Command{
     protected FoodItem foodItem;
     protected String[] inputSpilt;
 
-
     public void run(AppData data){
         foodItem = factoryMethod();
         data.addFood(foodItem);

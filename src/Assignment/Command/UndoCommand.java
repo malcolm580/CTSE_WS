@@ -6,6 +6,7 @@ import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class UndoCommand implements Command {
+
     @Override
     public void run(AppData data) {
         try{
