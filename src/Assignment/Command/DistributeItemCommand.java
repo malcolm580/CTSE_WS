@@ -10,9 +10,6 @@ import java.util.Objects;
 
 public class DistributeItemCommand implements Command {
 
-    protected InputStreamReader is = new InputStreamReader(System.in);
-    protected BufferedReader br = new BufferedReader(is);
-    protected String line;
     protected Memento memento;
     protected FoodItem edited;
     protected int disValue;
