@@ -45,26 +45,6 @@ public class Main {
                 factory.setData(data);
                 command = factory.create();
                 command.run(data);
-
-                Vector get = data.getFoodItems();
-                System.out.println("FoodItems");
-                for ( Object item : get ) {
-                    System.out.println(item);
-                }
-
-                Stack undo = data.getUndoStack();
-                System.out.println("Undo");
-                for(int i=undo.size()-1; i>=0;i--){
-
-                    System.out.println(undo.get(i));
-                }
-
-                Stack redo = data.getRedoStack();
-                System.out.println("Redo");
-                for(int i=redo.size()-1; i>=0;i--){
-
-                    System.out.println(redo.get(i));
-                }
             } catch (Exception e) {
                 System.out.println("Class not found");
 
@@ -81,5 +61,6 @@ public class Main {
         FactoryMap.put("s","Assignment.Factory.ShowCommandFactory");
         FactoryMap.put("g","Assignment.Factory.ReceiveItemCommandFactory");
         FactoryMap.put("d","Assignment.Factory.DistributeItemCommandFactory");
+        FactoryMap.put("l","Assignment.Factory.ListCommandFactory");
     }
 }
