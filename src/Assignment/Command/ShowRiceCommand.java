@@ -22,8 +22,10 @@ public class ShowRiceCommand extends ShowCommand {
         target = data.findFood(id);
         Rice rice = (Rice)target;
         if (target == null){
+            // If can not find Rice with input ID , show error message
             System.out.println("No item with this ID");
         }else{
+            // If Rice found, show those information
             System.out.println("Food item information");
             System.out.println("ID: " + rice.getItemID());
             System.out.println("Name: " + rice.getName());

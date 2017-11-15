@@ -19,8 +19,10 @@ public class ShowInstantNoodleCommand extends ShowCommand {
         target = data.findFood(id);
         InstantNoodle noodle = (InstantNoodle)target;
         if (target == null){
+            // If can not find Instant Noodle with input ID , show error message
             System.out.println("No item with this ID");
         }else{
+            // If Rice found, show those information
             System.out.println("Food item information");
             System.out.println("ID: " + noodle.getItemID());
             System.out.println("Name: " + noodle.getName());
