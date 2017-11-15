@@ -11,6 +11,7 @@ public class RedoCommand implements Command {
             Command command = (Command) data.removeRedo();
             command.run(data);
             data.addUndo(command);
+            System.out.println("Redo Complete");
         }catch (EmptyStackException ex){
             System.out.println("No more redo stack");
         }

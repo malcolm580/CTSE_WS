@@ -13,12 +13,12 @@ public class Account {
 
     public void increase ( double amount ){
         this.balance += amount;
-        System.out.println("--- account number:" + this.accountNumber + "increase amount" + amount );
+        System.out.println("--- account number:" + this.accountNumber + " increase amount" + amount );
     }
 
     public void decrease ( double amount){
         this.balance -= amount;
-        System.out.println("--- account number:" + this.accountNumber + "decrease amount" + amount );
+        System.out.println("--- account number:" + this.accountNumber + " decrease amount" + amount );
     }
 
     @Override

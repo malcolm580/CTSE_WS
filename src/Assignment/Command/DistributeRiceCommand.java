@@ -21,6 +21,7 @@ public class DistributeRiceCommand implements Command {
     @Override
     public void run(AppData data) {
         rice.setBalance(rice.getBalance()-disValue);
+        System.out.println("Distributed " + disValue + " packs of "+ rice.getName() +". Currect quantity is " + rice.getBalance());
     }
 
 

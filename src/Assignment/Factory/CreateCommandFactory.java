@@ -20,7 +20,7 @@ public class CreateCommandFactory extends Factory {
     public Command create() throws Exception {
 
         //Ask for which type of food item to be create
-        System.out.println("Enter food type (ri = noodle / in = instant noodle):");
+        System.out.println("Enter food type (ri = rice / in = instant noodle):");
         line = null;
         try {
             line = br.readLine();

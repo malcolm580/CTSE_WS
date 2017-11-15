@@ -7,6 +7,7 @@ import java.util.Stack;
 public class ExitCommand implements Command {
     @Override
     public void run(AppData data) {
+        System.out.println("Leaving System");
         System.exit(0);
     }
 

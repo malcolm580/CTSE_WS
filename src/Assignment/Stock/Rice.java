@@ -19,7 +19,7 @@ public class Rice extends FoodItem {
 
     @Override
     public String toString() {
-        return  itemID+ "\t\t" + name + "\t\t" + balance +"\t\t" +type +"\n" ;
+        return  itemID+ "\t\t" + name + "\t\t" + balance +"\t\t\t" +type +"\n" ;
     }
 
 

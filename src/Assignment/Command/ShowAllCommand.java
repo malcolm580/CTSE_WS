@@ -18,7 +18,7 @@ public class ShowAllCommand extends ShowCommand {
         }else{
             // If any item in stock , show those message
             System.out.println("Food item information");
-            System.out.println("ID \t Name \t Quantity \t Other Info");
+            System.out.println("ID \t\t Name \t Quantity \t Other Info");
             for (Object item: items ) {
                 System.out.print(item);
             }

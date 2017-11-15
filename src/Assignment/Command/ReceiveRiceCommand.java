@@ -21,6 +21,7 @@ public class ReceiveRiceCommand implements Command {
     @Override
     public void run(AppData data) {
         rice.setBalance(rice.getBalance() + recValue);
+        System.out.println("Received " + recValue + " packs of "+ rice.getName() +". Currect quantity is " + rice.getBalance());
     }
 
 

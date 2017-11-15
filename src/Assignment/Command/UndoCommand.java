@@ -13,6 +13,7 @@ public class UndoCommand implements Command {
             Command command = (Command) data.removeUndo();
             command.undo(data);
             data.addRedo(command);
+            System.out.println("Undo Complete");
         }catch (EmptyStackException ex){
             System.out.println("No more undo stack");
         }

@@ -13,11 +13,21 @@ public class Main {
         Account acct2 = new Account("INT002" , 100.0);
         ct.saveCustomer(cust1);
         cust1.addAccount(acct1);
-
         System.out.println(cust1);
 
         ct.saveAccount(acct1);
         acct1.increase(50.0);
+        System.out.println(acct1);
 
+        ct.saveAccount(acct2);
+        acct2.decrease(100.0);
+        System.out.println(acct2);
+
+        ct.saveCustomer(cust1);
+        cust1.removeAccount(acct1);
+        System.out.println(cust1);
+
+        ct.undo();
+        System.out.println(cust1);
     }
 }

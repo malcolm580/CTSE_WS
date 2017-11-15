@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Stack;
-import java.util.Vector;
 
 import Assignment.Command.Command;
 import Assignment.Factory.*;
@@ -30,7 +28,7 @@ public class Main {
             System.out.println("Advanced Inventory Management System");
             System.out.println("Please enter command: [c | s | g | d | u | r | l | x]");
             System.out.println("c = create item, s = show item , g = receive item , d = distribute item,");
-            System.out.println("u = undo . r =redo , l = list undo/redo , x=exit system");
+            System.out.println("u = undo , r =redo , l = list undo/redo , x = exit system");
 
             line = null;
             try {

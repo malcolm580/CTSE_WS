@@ -26,6 +26,7 @@ public class Customer {
     }
     public void removeAccount (Account b) {
         Accounts.remove(b);
+        System.out.println("--- remove account : " + b.accountNumber);
     }
     public void addAccount(Account b) {
         Accounts.add(b);
@@ -34,7 +35,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        String message = "\"SuperBank Customer :\" + this.name + \" at address: \" +this.address";
+        String message = "\"SuperBank Customer :\"" + this.name + " at address: " +this.address;
         for ( Account acct : Accounts) {
             message += "\n" + acct ;
         }

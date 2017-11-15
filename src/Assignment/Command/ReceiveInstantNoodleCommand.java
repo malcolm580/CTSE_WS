@@ -21,6 +21,7 @@ public class ReceiveInstantNoodleCommand implements Command {
     @Override
     public void run(AppData data) {
         noodle.setBalance(noodle.getBalance() + recValue);
+        System.out.println("Receive " + recValue + " packs of "+ noodle.getName() +". Currect quantity is " + noodle.getBalance());
     }
 
 

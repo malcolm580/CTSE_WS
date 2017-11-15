@@ -19,7 +19,7 @@ public class InstantNoodle extends FoodItem {
 
     @Override
     public String toString() {
-        return itemID+ "\t\t" + name + "\t\t" + balance +"\t\t" + weight +"\n";
+        return itemID+ "\t\t" + name + "\t\t" + balance +"\t\t\t" + weight +"\n";
     }
 
 }
