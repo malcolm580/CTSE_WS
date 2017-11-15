@@ -62,5 +62,6 @@ public class Main {
         FactoryMap.put("g","Assignment.Factory.ReceiveItemCommandFactory");
         FactoryMap.put("d","Assignment.Factory.DistributeItemCommandFactory");
         FactoryMap.put("l","Assignment.Factory.ListCommandFactory");
+        FactoryMap.put("x","Assignment.Factory.ExitCommandFactory");
     }
 }

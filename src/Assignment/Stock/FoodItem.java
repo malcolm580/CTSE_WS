@@ -38,10 +38,4 @@ public abstract class FoodItem {
 
     public abstract String toString();
 
-    public abstract void showInfo();
-
-    public String mementoName(){
-        return null;
-    }
-
 }

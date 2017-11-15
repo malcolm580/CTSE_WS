@@ -9,11 +9,6 @@ public class Rice extends FoodItem {
         this.type = lineSplit[2];
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
     public String getType() {
         return type;
     }
@@ -25,19 +20,6 @@ public class Rice extends FoodItem {
     @Override
     public String toString() {
         return  itemID+ "\t\t" + name + "\t\t" + balance +"\t\t" +type +"\n" ;
-    }
-
-    @Override
-    public void showInfo() {
-        System.out.println("ID: " + itemID);
-        System.out.println("Name: " + name);
-        System.out.println("Quantity: " + balance);
-        System.out.println("Type: " + type);
-    }
-
-    @Override
-    public String mementoName() {
-        return "RiceMemento";
     }
 
 

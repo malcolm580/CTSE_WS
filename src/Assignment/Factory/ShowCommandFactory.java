@@ -1,6 +1,7 @@
 package Assignment.Factory;
 
 import Assignment.Command.Command;
+import Assignment.Stock.FoodItem;
 
 import java.io.IOException;
 import java.lang.reflect.Constructor;
@@ -12,7 +13,8 @@ public class ShowCommandFactory extends Factory {
     public ShowCommandFactory(){
         commandMap = new HashMap();
         commandMap.put("*","Assignment.Command.ShowAllCommand");
-        commandMap.put("id","Assignment.Command.ShowIDCommand");
+        commandMap.put("Rice","Assignment.Command.ShowRiceCommand");
+        commandMap.put("InstantNoodle","Assignment.Command.ShowInstantNoodleCommand");
     }
 
     @Override
@@ -27,9 +29,9 @@ public class ShowCommandFactory extends Factory {
         if(line.equals("*")){
             command = (Command) Class.forName((String) commandMap.get("*")).newInstance();
         }else{
-            Class<?> cl = Class.forName((String) commandMap.get("id"));
-            Constructor<?> cons = cl.getConstructor(String.class);
-            command = (Command) cons.newInstance(line);
+            FoodItem item  = data.findFood(Integer.parseInt(line));
+            Constructor c = Class.forName( (String) commandMap.get( item.getClass().getSimpleName() ) ).getConstructor(String.class);
+            command  = (Command) c.newInstance(line);
         }
         return command ;
     }

@@ -1,20 +1,28 @@
 package Assignment.Factory;
 
 import Assignment.Command.Command;
-import Assignment.Command.DistributeItemCommand;
 import Assignment.Command.ReceiveItemCommand;
 import Assignment.Stock.*;
 
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class ReceiveItemCommandFactory extends Factory {
+
+    public ReceiveItemCommandFactory() {
+        commandMap = new HashMap();
+        commandMap.put("Rice" , "Assignment.Command.ReceiveRiceCommand");
+        commandMap.put("InstantNoodle" , "Assignment.Command.ReceiveInstantNoodleCommand");
+    }
+
     @Override
     public Command create() throws Exception {
         Memento memento = null;
         FoodItem edited;
         int recValue;
-        Command command;
+        Command command = null;
 
         System.out.println("Enter id code;");
         line = null;
@@ -25,17 +33,7 @@ public class ReceiveItemCommandFactory extends Factory {
         }
         edited = data.findFood(Integer.parseInt(line));
 
-        if(Objects.equals(edited.mementoName(), "RiceMemento")){
-            Rice rice = (Rice)edited;
-            edited = rice;
-            memento = new RiceMemento(rice, rice.getBalance() , rice.getType());
-        }else if(Objects.equals(edited.mementoName(), "InstantNoodleMemento")){
-            InstantNoodle instantNoodle = (InstantNoodle) edited;
-            edited = instantNoodle ;
-            memento = new InstantNoodleMemento(instantNoodle, instantNoodle.getBalance() , instantNoodle.getWeight());
-        }
-
-        System.out.println("Quantity to distribute;");
+        System.out.println("Quantity to Receive;");
         line = null;
         try {
             line = br.readLine();
@@ -43,8 +41,15 @@ public class ReceiveItemCommandFactory extends Factory {
             System.out.print("Please input correct format");
         }
         recValue = Integer.parseInt(line);
-        command = new ReceiveItemCommand(memento,edited,recValue);
-        data.addUndo(command);
+
+       try{
+           Constructor c = Class.forName( (String) commandMap.get( edited.getClass().getSimpleName() ) ).getConstructor(FoodItem.class , Integer.TYPE);
+           command  = (Command) c.newInstance(edited , recValue);
+           data.addUndo(command);
+
+       }catch (Exception ex){
+           ex.printStackTrace();
+       }
         return command ;
     }
 }

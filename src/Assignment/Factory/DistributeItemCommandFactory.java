@@ -5,10 +5,17 @@ import Assignment.Command.DistributeItemCommand;
 import Assignment.Stock.*;
 
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class DistributeItemCommandFactory extends Factory {
 
+    public DistributeItemCommandFactory(){
+        commandMap = new HashMap();
+        commandMap.put("Rice","Assignment.Command.DistributeRiceCommand");
+        commandMap.put("InstantNoodle","Assignment.Command.DistributeInstantNoodleCommand");
+    }
 
     @Override
     public Command create() throws Exception {
@@ -26,16 +33,6 @@ public class DistributeItemCommandFactory extends Factory {
         }
         edited = data.findFood(Integer.parseInt(line));
 
-        if(Objects.equals(edited.mementoName(), "RiceMemento")){
-            Rice rice = (Rice)edited;
-            edited = rice;
-            memento = new RiceMemento(rice, rice.getBalance() , rice.getType());
-        }else if(Objects.equals(edited.mementoName(), "InstantNoodleMemento")){
-            InstantNoodle instantNoodle = (InstantNoodle) edited;
-            edited = instantNoodle ;
-            memento = new InstantNoodleMemento(instantNoodle, instantNoodle.getBalance() , instantNoodle.getWeight());
-        }
-
         System.out.println("Quantity to distribute;");
         line = null;
         try {
@@ -44,7 +41,9 @@ public class DistributeItemCommandFactory extends Factory {
             System.out.print("Please input correct format");
         }
         disValue = Integer.parseInt(line);
-        command = new DistributeItemCommand(memento,edited,disValue);
+
+        Constructor c = Class.forName( (String) commandMap.get( edited.getClass().getSimpleName() ) ).getConstructor(FoodItem.class , Integer.TYPE);
+        command  = (Command) c.newInstance(edited , disValue);
         data.addUndo(command);
         return command ;
     }
