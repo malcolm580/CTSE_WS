@@ -20,6 +20,6 @@ public abstract class Factory {
         this.data = data;
     }
 
-    public abstract   Command create() throws Exception;
+    public abstract Command create() throws Exception;
 
 }

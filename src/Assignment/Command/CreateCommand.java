@@ -33,7 +33,6 @@ public abstract class CreateCommand implements Command{
         return foodItem;
     }
 
-
     @Override
     public String toString() {
         return "Create "+inputSpilt[0]+" "+ inputSpilt[1];

@@ -11,6 +11,7 @@ public class InstantNoodleCreateCommand extends CreateCommand {
 
     public FoodItem factoryMethod( ) {
 
+        // Ask for instant noodle's id , name , weight to be created
         System.out.println("Enter (integer) id , (string) name , (integer) weight:");
         line = null;
         try {
@@ -20,6 +21,7 @@ public class InstantNoodleCreateCommand extends CreateCommand {
         }
         inputSpilt = line.split(",");
 
+        // Parse the string input to integer for the food item initiation
         try{
             int id = Integer.parseInt(inputSpilt[0]);
             int weight = Integer.parseInt(inputSpilt[2]);

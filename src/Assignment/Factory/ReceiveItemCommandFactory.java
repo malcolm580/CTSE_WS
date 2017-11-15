@@ -10,6 +10,7 @@ import java.util.HashMap;
 public class ReceiveItemCommandFactory extends Factory {
 
     public ReceiveItemCommandFactory() {
+        // insert a String index array for user option
         commandMap = new HashMap();
         commandMap.put("Rice" , "Assignment.Command.ReceiveRiceCommand");
         commandMap.put("InstantNoodle" , "Assignment.Command.ReceiveInstantNoodleCommand");
@@ -22,6 +23,7 @@ public class ReceiveItemCommandFactory extends Factory {
         int recValue;
         Command command = null;
 
+        //Enter ID for the food to be receive
         System.out.println("Enter id code;");
         line = null;
         try {
@@ -31,6 +33,7 @@ public class ReceiveItemCommandFactory extends Factory {
         }
         edited = data.findFood(Integer.parseInt(line));
 
+        // Enter the quantity to be receive
         System.out.println("Quantity to Receive;");
         line = null;
         try {
@@ -40,14 +43,11 @@ public class ReceiveItemCommandFactory extends Factory {
         }
         recValue = Integer.parseInt(line);
 
-       try{
-           Constructor c = Class.forName( (String) commandMap.get( edited.getClass().getSimpleName() ) ).getConstructor(FoodItem.class , Integer.TYPE);
-           command  = (Command) c.newInstance(edited , recValue);
-           data.addUndo(command);
+        //Create a new receive command instance for user input
+        Constructor c = Class.forName((String) commandMap.get(edited.getClass().getSimpleName())).getConstructor(FoodItem.class, Integer.TYPE);
+        command = (Command) c.newInstance(edited, recValue);
+        data.addUndo(command);
 
-       }catch (Exception ex){
-           ex.printStackTrace();
-       }
         return command ;
     }
 }

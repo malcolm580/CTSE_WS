@@ -11,6 +11,7 @@ public class RiceCreateCommand extends CreateCommand {
     @Override
     public FoodItem factoryMethod() {
 
+        // Ask for  rice's id , name , type to be created
         System.out.println("Enter (integer) id , (String) name , (String) type:");
         line = null;
         try {
@@ -20,6 +21,7 @@ public class RiceCreateCommand extends CreateCommand {
         }
         inputSpilt = line.split(",");
 
+        // Parse the string input to integer for the food item initiation
         try{
             int id = Integer.parseInt(inputSpilt[0]);
         }catch (NumberFormatException ex){

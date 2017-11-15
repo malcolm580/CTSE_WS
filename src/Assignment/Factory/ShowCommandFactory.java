@@ -11,6 +11,7 @@ import java.util.HashMap;
 public class ShowCommandFactory extends Factory {
 
     public ShowCommandFactory(){
+        // insert a String index array for user option
         commandMap = new HashMap();
         commandMap.put("*","Assignment.Command.ShowAllCommand");
         commandMap.put("Rice","Assignment.Command.ShowRiceCommand");
@@ -19,6 +20,7 @@ public class ShowCommandFactory extends Factory {
 
     @Override
     public Command create() throws Exception {
+        //Request of showing item ID
         System.out.println("Enter ID (* to show all):");
         line = null;
         try {
@@ -26,6 +28,8 @@ public class ShowCommandFactory extends Factory {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // If user enter * , show all item . Otherwise, show the responsive item with input ID
         if(line.equals("*")){
             command = (Command) Class.forName((String) commandMap.get("*")).newInstance();
         }else{
