@@ -15,7 +15,6 @@ class DisplayGUISwingImp implements DisplayGUI
     	label.setText("12:00:30");
     	frame.getContentPane().add(label,BorderLayout.CENTER);
     	frame.setSize(50,50);
-    	frame.show();
 	}
 
 	@Override
