@@ -29,7 +29,6 @@ public class DistributeItemCommand implements Command {
     @Override
     public void undo(AppData data) {
         memento.restore();
-//        data.addRedo(this);
     }
 
 

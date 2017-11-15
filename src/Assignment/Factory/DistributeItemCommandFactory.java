@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class DistributeItemCommandFactory extends Factory {
+
+
     @Override
     public Command create() throws Exception {
         Memento memento = null;
@@ -23,6 +25,7 @@ public class DistributeItemCommandFactory extends Factory {
             System.out.print("Please input correct format");
         }
         edited = data.findFood(Integer.parseInt(line));
+
         if(Objects.equals(edited.mementoName(), "RiceMemento")){
             Rice rice = (Rice)edited;
             edited = rice;
