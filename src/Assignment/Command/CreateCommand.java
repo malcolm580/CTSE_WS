@@ -6,7 +6,7 @@ import Assignment.Stock.FoodItem;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public abstract class CreateCommand implements Command{
+public abstract class CreateCommand implements Command {
 
     protected InputStreamReader is = new InputStreamReader(System.in);
     protected BufferedReader br = new BufferedReader(is);
@@ -14,15 +14,15 @@ public abstract class CreateCommand implements Command{
     protected FoodItem foodItem;
     protected String[] inputSpilt;
 
-    public CreateCommand(){
+    public CreateCommand() {
         foodItem = factoryMethod();
     }
 
-    public void run(AppData data){
+    public void run(AppData data) {
         data.addFood(foodItem);
     }
 
-    public abstract FoodItem factoryMethod( );
+    public abstract FoodItem factoryMethod();
 
     @Override
     public void undo(AppData data) {
@@ -35,7 +35,7 @@ public abstract class CreateCommand implements Command{
 
     @Override
     public String toString() {
-        return "Create "+inputSpilt[0]+" "+ inputSpilt[1];
+        return "Create " + inputSpilt[0] + " " + inputSpilt[1];
     }
 
 }

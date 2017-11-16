@@ -12,14 +12,14 @@ public class ShowAllCommand extends ShowCommand {
     @Override
     public void run(AppData data) {
         Vector items = data.getFoodItems();
-        if(items.size() == 0){
+        if (items.size() == 0) {
             // If no any item in stock , show error message
             System.out.println("No food item at stock");
-        }else{
+        } else {
             // If any item in stock , show those message
             System.out.println("Food item information");
             System.out.println("ID \t\t Name \t Quantity \t Other Info");
-            for (Object item: items ) {
+            for (Object item : items) {
                 System.out.print(item);
             }
         }

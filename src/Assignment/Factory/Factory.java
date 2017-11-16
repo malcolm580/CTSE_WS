@@ -16,7 +16,7 @@ public abstract class Factory {
     protected String line;
     protected Command command;
 
-    public void setData(AppData data){
+    public void setData(AppData data) {
         this.data = data;
     }
 

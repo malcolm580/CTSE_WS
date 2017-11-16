@@ -30,31 +30,31 @@ public class AppData {
         return foodItems;
     }
 
-    public void addUndo(Command undo){
+    public void addUndo(Command undo) {
         this.undoStack.push(undo);
     }
 
-    public Object removeUndo(){
+    public Object removeUndo() {
         return this.undoStack.pop();
     }
 
-    public void addRedo(Command redo){
+    public void addRedo(Command redo) {
         this.redoStack.push(redo);
     }
 
-    public Object removeRedo(){
+    public Object removeRedo() {
         return this.redoStack.pop();
     }
 
-    public void addFood( FoodItem food ){
-         this.foodItems.add(food);
+    public void addFood(FoodItem food) {
+        this.foodItems.add(food);
     }
 
-    public void removeFood ( FoodItem food){
+    public void removeFood(FoodItem food) {
         this.foodItems.remove(food);
     }
 
-    public FoodItem findFood(int id){
+    public FoodItem findFood(int id) {
         FoodItem target = null;
         for (FoodItem foodItem : foodItems) {
             int targetID = foodItem.getItemID();

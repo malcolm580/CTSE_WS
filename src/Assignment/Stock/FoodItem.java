@@ -6,11 +6,11 @@ public abstract class FoodItem {
     protected int itemID;
     protected int balance;
 
-    public FoodItem( int itemID , String name ) {
+    public FoodItem(int itemID, String name) {
         this.name = name;
         try {
             this.itemID = itemID;
-        }catch (NumberFormatException ex){
+        } catch (NumberFormatException ex) {
             System.out.print("Please enter int for ItemID");
         }
         this.balance = 0;

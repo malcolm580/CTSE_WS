@@ -9,11 +9,11 @@ import java.util.HashMap;
 
 public class CreateCommandFactory extends Factory {
 
-    public CreateCommandFactory (){
+    public CreateCommandFactory() {
         // insert a String index array for user option
         commandMap = new HashMap();
-        commandMap.put("ri","Assignment.Command.RiceCreateCommand");
-        commandMap.put("in","Assignment.Command.InstantNoodleCreateCommand");
+        commandMap.put("ri", "Assignment.Command.RiceCreateCommand");
+        commandMap.put("in", "Assignment.Command.InstantNoodleCreateCommand");
     }
 
     @Override
@@ -31,12 +31,12 @@ public class CreateCommandFactory extends Factory {
         String foodType = (String) commandMap.get(input);
 
         //Create responding create item by the user input
-        try{
+        try {
             command = (Command) Class.forName(foodType).newInstance();
-        }catch (ClassNotFoundException | NullPointerException ex){
+        } catch (ClassNotFoundException | NullPointerException ex) {
             System.out.println("Command not found");
         }
         data.addUndo(command);
-        return command ;
+        return command;
     }
 }

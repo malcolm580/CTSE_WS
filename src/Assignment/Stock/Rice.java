@@ -5,7 +5,7 @@ public class Rice extends FoodItem {
     protected String type;
 
     public Rice(String[] lineSplit) {
-        super( Integer.parseInt(lineSplit[0]) , lineSplit[1]);
+        super(Integer.parseInt(lineSplit[0]), lineSplit[1]);
         this.type = lineSplit[2];
     }
 
@@ -19,7 +19,7 @@ public class Rice extends FoodItem {
 
     @Override
     public String toString() {
-        return  itemID+ "\t\t" + name + "\t\t" + balance +"\t\t\t" +type +"\n" ;
+        return itemID + "\t\t" + name + "\t\t" + balance + "\t\t\t" + type + "\n";
     }
 
 

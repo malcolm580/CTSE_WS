@@ -13,15 +13,15 @@ public class DistributeRiceCommand implements Command {
     protected int disValue;
 
     public DistributeRiceCommand(FoodItem edited, int disValue) {
-        this.rice = (Rice)edited;
+        this.rice = (Rice) edited;
         this.disValue = disValue;
-        this.memento = new RiceMemento(rice, rice.getBalance() , rice.getType() );
+        this.memento = new RiceMemento(rice, rice.getBalance(), rice.getType());
     }
 
     @Override
     public void run(AppData data) {
-        rice.setBalance(rice.getBalance()-disValue);
-        System.out.println("Distributed " + disValue + " packs of "+ rice.getName() +". Currect quantity is " + rice.getBalance());
+        rice.setBalance(rice.getBalance() - disValue);
+        System.out.println("Distributed " + disValue + " packs of " + rice.getName() + ". Currect quantity is " + rice.getBalance());
     }
 
 
@@ -32,7 +32,7 @@ public class DistributeRiceCommand implements Command {
 
 
     public String toString() {
-        return "Distribute "+disValue+" "+ rice.getItemID() + " " + rice.getName();
+        return "Distribute " + disValue + " " + rice.getItemID() + " " + rice.getName();
     }
 
 }

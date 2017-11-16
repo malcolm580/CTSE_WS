@@ -9,7 +9,7 @@ public class ShowInstantNoodleCommand extends ShowCommand {
 
     private int id;
 
-    public ShowInstantNoodleCommand(String id){
+    public ShowInstantNoodleCommand(String id) {
         this.id = Integer.parseInt(id);
     }
 
@@ -17,17 +17,17 @@ public class ShowInstantNoodleCommand extends ShowCommand {
     public void run(AppData data) {
         FoodItem target = null;
         target = data.findFood(id);
-        InstantNoodle noodle = (InstantNoodle)target;
-        if (target == null){
+        InstantNoodle noodle = (InstantNoodle) target;
+        if (target == null) {
             // If can not find Instant Noodle with input ID , show error message
             System.out.println("No item with this ID");
-        }else{
+        } else {
             // If Rice found, show those information
             System.out.println("Food item information");
             System.out.println("ID: " + noodle.getItemID());
             System.out.println("Name: " + noodle.getName());
             System.out.println("Quantity: " + noodle.getBalance());
-            System.out.println("Weight: " + noodle.getWeight() );
+            System.out.println("Weight: " + noodle.getWeight());
         }
     }
 

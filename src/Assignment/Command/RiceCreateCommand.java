@@ -22,9 +22,9 @@ public class RiceCreateCommand extends CreateCommand {
         inputSpilt = line.split(",");
 
         // Parse the string input to integer for the food item initiation
-        try{
+        try {
             int id = Integer.parseInt(inputSpilt[0]);
-        }catch (NumberFormatException ex){
+        } catch (NumberFormatException ex) {
             System.out.print("Please input Integer as ItemID");
         }
 

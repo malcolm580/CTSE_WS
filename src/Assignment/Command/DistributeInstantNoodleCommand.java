@@ -12,13 +12,13 @@ public class DistributeInstantNoodleCommand implements Command {
     public DistributeInstantNoodleCommand(FoodItem edited, int disValue) {
         this.noodle = (InstantNoodle) edited;
         this.disValue = disValue;
-        this.memento = new InstantNoodleMemento(noodle, noodle.getBalance() , noodle.getWeight() );
+        this.memento = new InstantNoodleMemento(noodle, noodle.getBalance(), noodle.getWeight());
     }
 
     @Override
     public void run(AppData data) {
-        noodle.setBalance(noodle.getBalance()-disValue);
-        System.out.println("Distributed " + disValue + " packs of "+ noodle.getName() +". Currect quantity is " + noodle.getBalance());
+        noodle.setBalance(noodle.getBalance() - disValue);
+        System.out.println("Distributed " + disValue + " packs of " + noodle.getName() + ". Currect quantity is " + noodle.getBalance());
     }
 
 
@@ -29,7 +29,7 @@ public class DistributeInstantNoodleCommand implements Command {
 
 
     public String toString() {
-        return "Distribute "+disValue+" "+ noodle.getItemID() + " " + noodle.getName();
+        return "Distribute " + disValue + " " + noodle.getItemID() + " " + noodle.getName();
     }
 
 }
