@@ -26,7 +26,7 @@ public class InstantNoodleCreateCommand extends CreateCommand {
             int id = Integer.parseInt(inputSpilt[0]);
             int weight = Integer.parseInt(inputSpilt[2]);
         }catch (NumberFormatException ex){
-            System.out.print("Please input Integer as ItemID");
+            System.out.println("Please input Integer as ItemID");
         }
 
         return new InstantNoodle(inputSpilt);

@@ -43,7 +43,9 @@ public class Main {
                 factory.setData(data);
                 command = factory.create();
                 command.run(data);
-            } catch (Exception e) {
+            }catch (NumberFormatException e){
+                System.out.println("Please Input Number");
+            }catch (Exception e) {
                 System.out.println("Class not found");
             }
 
